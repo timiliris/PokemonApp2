@@ -1,12 +1,12 @@
 import { Component,OnInit } from '@angular/core';
-import { Router } from "@angular/router";
-import { AuthenticationService } from ".../shared/authentication-service";
+import { Router } from '@angular/router';
+import {AuthenticationService} from '../../shared/authentication.service';
 @Component({
   selector: 'app-login',
-  templateUrl: './login.page.html',
-  styleUrls: ['./login.page.scss'],
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss'],
 })
-export class LoginPage implements OnInit {
+export class LoginComponent implements OnInit {
   constructor(
     public authService: AuthenticationService,
     public router: Router
@@ -16,13 +16,14 @@ export class LoginPage implements OnInit {
     this.authService.SignIn(email.value, password.value)
       .then((res) => {
         if(this.authService.isEmailVerified) {
-          this.router.navigate(['dashboard']);          
+          this.router.navigate(['dashboard']);
         } else {
-          window.alert('Email is not verified')
+          window.alert('Email is not verified');
           return false;
         }
       }).catch((error) => {
-        window.alert(error.message)
-      })
+        window.alert(error.message);
+      });
   }
 }
+

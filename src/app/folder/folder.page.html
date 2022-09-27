@@ -1,15 +1,4 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title>{{ folder }}</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content *ngIf="{{folder}} == 'login' " [fullscreen]="true">
-  <app-login></app-login>
-</ion-content>
-<ion-content *ngIf="{{folder}} == 'inbox' " [fullscreen]="true">
-  works
-</ion-content>
+<app-login *ngIf="folder == 'Login'" ></app-login>
+<app-registration *ngIf="folder == 'Register'" ></app-registration>
+<app-dashboard *ngIf="folder == 'Dashboard'" ></app-dashboard>
+<div *ngIf="folder == 'Inbox'" > WORKS</div>
