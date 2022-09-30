@@ -11,12 +11,13 @@ export class LoginComponent implements OnInit {
     public authService: AuthenticationService,
     public router: Router
   ) {}
-  ngOnInit() {}
+  ngOnInit() {
+  }
   logIn(email, password) {
     this.authService.SignIn(email.value, password.value)
       .then((res) => {
         if(this.authService.isEmailVerified) {
-          this.router.navigate(['dashboard']);
+          this.router.navigate(['folder/dashboard']);
         } else {
           window.alert('Email is not verified');
           return false;

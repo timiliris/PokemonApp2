@@ -24,3 +24,78 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+.CustomTitleOne{
+  color: #ffcb05 !important ;
+  font-size: 3vh !important;
+  font-family: 'Pokemon Solid', sans-serif;
+  letter-spacing: 7px;
+  text-shadow: 12px 12px 2px 2px rgba(12, 12, 24, 0.6);
+  margin-top: -3vh!important;
+  margin-bottom: 5vh!important;
+  text-align: center;
+}
+.CustomTitletwo{
+  color: #ffcb05 !important ;
+  font-size: 2.5vh !important;
+  font-family: 'Pokemon Solid', sans-serif;
+  letter-spacing: 5px;
+  text-shadow: 12px 12px 2px 2px rgba(12, 12, 24, 0.6);
+  margin-bottom: 5vh!important;
+  text-align: center;
+}
+.CustomMenu{
+  --background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%)!important;
+}
+.CustomImg{
+  border-radius: 15px;
+  margin-bottom: 1vh;
+}
+.CustomCard{
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+  text-align: center;
+  opacity: 80%;
+  box-shadow: 5px 5px 1px 1px rgba(0, 0, 255, .2);
+  border-radius: 30px;
+  box-sizing: content-box;
+  border: solid #e2af17 10px;
+}
+.CustomText{
+  color: white;
+}
+.CustomText2{
+  color: white;
+  font-size: 100%;
+  text-align: left;
+  text-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+}
+.CustomText3{
+  color: white;
+  font-size: 100%;
+  text-align: right;
+  text-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .6);
+}
+.CustomText4{
+  color: white;
+  font-size: 200%;
+  text-align: center;
+  text-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .6);
+  font-family: 'Pokemon Solid', sans-serif;
+  letter-spacing: 3px;
+}
+.CustomAccord{
+  max-height: 50px;
+}
+.CustomTitle3{
+  color: #ffcb05 !important ;
+  font-size: 2vh !important;
+  font-family: 'Pokemon Solid', sans-serif;
+  letter-spacing: 5px;
+  text-shadow: 12px 12px 2px 2px rgba(12, 12, 24, 0.6);
+  text-align: center;
+}
+.CustomIcon{
+  background-color: #4854e0;
+  color: #ffcb05!important;
+  border-radius: 10px;
+  font-size: 3vh;
+}

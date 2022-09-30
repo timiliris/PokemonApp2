@@ -10,6 +10,12 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import {environment} from '../environments/environment';
+import { LazyLoadImageModule } from 'ng-lazyload-image';
+import {verifyEmailRoutingModule} from "./auth/verify-email/verify-email.routing.module";
+import {loginRoutingModule} from "./auth/login/login-routing.module";
+
+
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,7 +28,9 @@ import {environment} from '../environments/environment';
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     AngularFirestoreModule,
-   
+    LazyLoadImageModule,
+    verifyEmailRoutingModule,
+    loginRoutingModule
     ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

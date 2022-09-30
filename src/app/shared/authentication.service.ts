@@ -1,4 +1,4 @@
-import { Injectable, NgZone } from '@angular/core';
+import {Injectable, NgZone, OnInit} from '@angular/core';
 import * as auth from 'firebase/auth';
 import { User } from './user';
 import { Router } from '@angular/router';
@@ -12,6 +12,10 @@ import {
 })
 export class AuthenticationService {
   userData: any;
+  userInfo: any;
+  userUid: any;
+  userName: any;
+  userLog: string;
   constructor(
     public afStore: AngularFirestore,
     public ngFireAuth: AngularFireAuth,
@@ -21,11 +25,15 @@ export class AuthenticationService {
     this.ngFireAuth.authState.subscribe((user) => {
       if (user) {
         this.userData = user;
+        this.userInfo = user.emailVerified;
+        this.userUid = user.uid
+        this.userName = user.displayName;
         localStorage.setItem('user', JSON.stringify(this.userData));
         JSON.parse(localStorage.getItem('user'));
       } else {
         localStorage.setItem('user', null);
         JSON.parse(localStorage.getItem('user'));
+        this.userLog = "false";
       }
     });
   }
@@ -41,7 +49,7 @@ export class AuthenticationService {
   SendVerificationMail() {
     return this.ngFireAuth.currentUser.then((user) => {
       return user.sendEmailVerification().then(() => {
-        this.router.navigate(['login']);
+        this.router.navigate(['folder/Login']);
       });
     });
   }
@@ -59,12 +67,12 @@ export class AuthenticationService {
       });
   }
   // Returns true when user is looged in
-  get isLoggedIn(): boolean {
+  isLoggedIn(): boolean {
     const user = JSON.parse(localStorage.getItem('user'));
     return user !== null && user.emailVerified !== false ? true : false;
   }
   // Returns true when user's email is verified
-  get isEmailVerified(): boolean {
+  isEmailVerified(): boolean {
     const user = JSON.parse(localStorage.getItem('user'));
     return user.emailVerified !== false ? true : false;
   }
@@ -78,7 +86,7 @@ export class AuthenticationService {
       .signInWithPopup(provider)
       .then((result) => {
         this.ngZone.run(() => {
-          this.router.navigate(['dashboard']);
+          this.router.navigate(['folder/Home']);
         });
         this.SetUserData(result.user);
       })
@@ -103,10 +111,11 @@ export class AuthenticationService {
     });
   }
   // Sign-out
-  SignOut() {
+  signOut() {
     return this.ngFireAuth.signOut().then(() => {
       localStorage.removeItem('user');
-      this.router.navigate(['login']);
+      this.router.navigate(['folder/Login']).then(r => window.location.reload());
     });
   }
+
 }

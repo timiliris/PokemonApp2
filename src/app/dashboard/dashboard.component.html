@@ -1,3 +1,32 @@
+<ion-toolbar>
+  <ion-title>User Dashboard</ion-title>
+</ion-toolbar>
 <ion-content fullscreen="true">
-  <ion-button type="submit" (click)="authService.SignOut()" expand="block">Logout</ion-button>
+  <ion-grid >
+    <ion-row>
+      <ion-col>
+        <ion-card class="CustomCard">
+          <ion-card-header style="text-align: center">
+            <p>Welcome to the Neo Poke Dashboard<p>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-grid >
+              <ion-row>
+                <ion-col size="6" >
+                  <ion-card class="CustomCard">
+                    <ion-card-header>
+                      <p>{{username}}</p>
+                      <ion-img  [src]="userphoto" style="max-width: auto;"></ion-img>
+                    </ion-card-header>
+                    <ion-card-content>
+                    </ion-card-content>
+                  </ion-card>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
