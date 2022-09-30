@@ -1,5 +1,4 @@
 <ion-content fullscreen="true" *ngIf="authService.userData">
-  <app-registration *ngIf="folder == 'Register'" ></app-registration>
   <app-dashboard *ngIf="folder == 'Dashboard'" ></app-dashboard>
   <app-home *ngIf="folder == 'Home'"></app-home>
   <app-pokedex *ngIf="folder == 'Pokedex'" ></app-pokedex>
@@ -8,8 +7,6 @@
   <app-login *ngIf="folder == 'Login'" ></app-login>
   <app-registration *ngIf="folder == 'Register'" ></app-registration>
   <app-logout *ngIf="folder == 'logout'"></app-logout>
-  <app-registration *ngIf="folder == 'Register'" ></app-registration>
   <app-password-reset *ngIf="folder == 'password-reset'" ></app-password-reset>
-  <app-verify-email></app-verify-email>
 </ion-content>
 

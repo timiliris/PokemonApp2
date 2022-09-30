@@ -10,8 +10,8 @@ import {AuthenticationService} from "./shared/authentication.service";
 export class AppComponent implements OnInit{
 
   public appPages = [
-    { title: 'Login', url: '/folder/Login', icon: 'person-circle' },
-    { title: 'Register', url: '/folder/Register', icon: 'clipboard' },
+    { title: 'Connexion', url: '/folder/Login', icon: 'person-circle' },
+    { title: 'Inscription', url: '/folder/Register', icon: 'clipboard' },
 
 
   ];

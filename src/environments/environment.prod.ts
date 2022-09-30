@@ -7,7 +7,7 @@ export const environment = {
     projectId: "pokemon-b9d1a",
     storageBucket: "pokemon-b9d1a.appspot.com",
     messagingSenderId: "946402382824",
-    appId: "1:946402382824:web:a44098a4b96a1200a68a5d",
-    measurementId: "G-KBM1RWV400"
+    appId: "1:946402382824:web:7e2d18209c8bc31ba68a5d",
+    measurementId: "G-DDZPBNR71Z"
   }
 };

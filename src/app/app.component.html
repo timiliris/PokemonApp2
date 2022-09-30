@@ -1,6 +1,6 @@
 <link href="https://fonts.cdnfonts.com/css/pokemon-solid" rel="stylesheet">
 <ion-app>
-  <ion-split-pane contentId="main-content">
+  <ion-split-pane contentId="main-content" style="--side-max-width: 30vh">
     <ion-menu  contentId="main-content" type="overlay">
       <ion-content>
         <ion-list id="inbox-list">
@@ -24,7 +24,7 @@
             </ion-menu-toggle>
         </ion-list>
         <ion-item class="ion-justify-content-center" *ngIf="authService.userData" >
-        <ion-button color="danger" (click)="authService.signOut()">Se deconnectez</ion-button>
+        <ion-button color="danger" (click)="authService.signOut()">Deconnexion</ion-button>
       </ion-item>
       </ion-content>
     </ion-menu>

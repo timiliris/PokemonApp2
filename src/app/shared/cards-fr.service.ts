@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import TCGdex from '@tcgdex/sdk';
+import TCGdex, {CardResume} from '@tcgdex/sdk';
 
 
 @Injectable({
@@ -7,12 +7,12 @@ import TCGdex from '@tcgdex/sdk';
 })
 
 export class CardsFRService {
-  Cards:[] = [];
+  Cards:Array<CardResume> = [];
   constructor() {
   }
   async getAllCards(){
     const tcgdex = new TCGdex('en');
-    const [cards] = await Promise.all([tcgdex.fetch('cards')]);
+    const cards = await tcgdex.fetch('cards');
     console.log(cards)
     // @ts-ignore
     this.Cards =  cards ;

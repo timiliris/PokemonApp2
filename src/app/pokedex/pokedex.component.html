@@ -9,11 +9,14 @@
 <ion-content fullscreen="true">
   <ion-grid>
     <ion-row>
-        <ion-card >
+
+        <ion-card *ngFor="let card of cardsFR.Cards.slice(0,10)" >
           <ion-card-header>
+            {{card.name}}
           </ion-card-header>
           <ion-card-content>
             description
+            <ion-img class="CustomImg" [src]="(card?.image)+'/low.jpg'" ></ion-img>
           </ion-card-content>
         </ion-card>
     </ion-row>
