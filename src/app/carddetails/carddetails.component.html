@@ -1,0 +1,39 @@
+<ion-content fullscree="true">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-card class="CustomCard">
+          <ion-card-header>
+            <ion-title class="CustomTitletwo">{{cardsFR.cardname}}</ion-title>
+            <ion-grid>
+              <ion-row>
+              <ion-col size-xl="4" size-xs="12">
+               <p class="CustomTitletwo">Information</p>
+                <p>Name: {{cardsFR.cardname}}</p>
+                <p>{{cardsFR.carddesc}}</p>
+                <p></p>
+                <p>stage : {{cardsFR.cardstage}}</p>
+                <p>Rarity : {{cardsFR.cardrarity}}</p>
+              </ion-col>
+               <ion-col size-xl="4" size-xs="12">
+                 <ion-img class="CustomImg2" [src]="(cardsFR.cardimage)+'/high.jpg'" ></ion-img>
+               </ion-col>
+                <ion-col size-xl="4" size-xs="12">
+                  <p class="CustomTitletwo">Attacks</p>
+                  <div *ngFor="let attack of cardsFR.pokeattack" >
+                    <p class="CustomTitle3">{{attack?.name}} {{attack.damage}}</p>
+                    <p>{{attack?.effect}}</p>
+                  </div>
+                </ion-col>
+            </ion-row>
+            </ion-grid>
+          </ion-card-header>
+          <ion-card-content >
+            <div>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

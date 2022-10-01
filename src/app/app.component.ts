@@ -21,6 +21,7 @@ export class AppComponent implements OnInit{
     { title: 'Favoris', url: '/folder/Favoris', icon: 'heart' },
     { title: 'Boutique', url: '/folder/Boutique', icon: 'pricetags' },
     { title: 'Dashboard', url: '/folder/Dashboard', icon: 'bar-chart' },
+    { title: 'Info', url: '/folder/Info', icon: 'help' },
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
   constructor(public authService: AuthenticationService) {

@@ -18,6 +18,10 @@ const routes: Routes = [
   {
     path: 'folder/logout',
     loadChildren: () => import('./auth/logout/logout.component').then( m => m.LogoutComponent)
+  },
+  {
+    path: 'folder/cardDetails',
+    loadChildren: () => import('./carddetails/carddetails.component').then( m => m.CarddetailsComponent)
   }
 ];
 

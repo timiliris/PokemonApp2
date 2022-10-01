@@ -15,6 +15,8 @@ import {HomeComponent} from "../home/home.component";
 import {LogoutComponent} from "../auth/logout/logout.component";
 import {PokedexComponent} from "../pokedex/pokedex.component";
 import {VerifyEmailComponent} from "../auth/verify-email/verify-email.component";
+import {InfoComponent} from "../info/info.component";
+import {CarddetailsComponent} from "../carddetails/carddetails.component";
 
 @NgModule({
   imports: [
@@ -23,6 +25,6 @@ import {VerifyEmailComponent} from "../auth/verify-email/verify-email.component"
     IonicModule,
     FolderPageRoutingModule
   ],
-  declarations: [FolderPage, LoginComponent, RegistrationComponent, DashboardComponent, PasswordResetComponent, HomeComponent, LogoutComponent, PokedexComponent, VerifyEmailComponent]
+  declarations: [FolderPage, LoginComponent, RegistrationComponent, DashboardComponent, PasswordResetComponent, HomeComponent, LogoutComponent, PokedexComponent, VerifyEmailComponent, InfoComponent, CarddetailsComponent]
 })
 export class FolderPageModule {}

@@ -1,22 +1,50 @@
 <ion-header>
   <ion-title class="CustomTitle3">Pokedex </ion-title>
-  <ion-toolbar>
-    <ion-searchbar>
-    </ion-searchbar>
-    <ion-button color="light" (click)="btnAllcards()">Get all card</ion-button>
-  </ion-toolbar>
 </ion-header>
-<ion-content fullscreen="true">
+<ion-content>
   <ion-grid>
     <ion-row>
-
-        <ion-card *ngFor="let card of cardsFR.Cards.slice(0,10)" >
+      <ion-col>
+        <ion-accordion-group *ngFor="let sets of cardsFR.Sets">
+          <ion-accordion value="{{sets.name}}">
+            <ion-item slot="header" color="light" (click)="cardsFR.getSetinfo(sets.id)" >
+              <div slot="start">
+                <ion-img [src]="sets?.symbol" style="max-width: 25px"></ion-img>
+              </div>
+              <div>
+                {{sets.name}}
+              </div>
+              <div slot="end">
+                Total card : {{sets.cardCount.total}}
+              </div>
+            </ion-item>
+            <div class="ion-padding" slot="content">
+              <ion-item *ngFor="let cards of cardsFR.setcard.slice(0,100)">
+                <ion-thumbnail slot="start" >
+                  <ion-img loading="lazy" class="CustomImg" [src]="(cards?.image)+'/low.jpg'" style="max-width: 100px" ></ion-img>
+                </ion-thumbnail>
+                <div slot="start">
+                  <ion-label>{{cards.localId}}/{{cardsFR.cardcount}} {{cards.name}}</ion-label>
+                </div>
+                <div slot="end">
+                  <p>{{cards.id}}<ion-button (click)="cardsFR.getCardInfo(cards.localId, sets.id )">Details</ion-button></p>
+                </div>
+              </ion-item>
+            </div>
+          </ion-accordion>
+        </ion-accordion-group>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row>
+        <ion-card class="CustomCard" *ngFor="let card of cardsFR.Cards" >
           <ion-card-header>
-            {{card.name}}
+            <ion-img class="CustomImg" [src]="(card?.image)+'/low.jpg'" ></ion-img>
           </ion-card-header>
           <ion-card-content>
-            description
-            <ion-img class="CustomImg" [src]="(card?.image)+'/low.jpg'" ></ion-img>
+            <p class="CustomTitle3" >{{card.name}}</p>
+            <p class="CustomText" > {{card.id}} </p>
           </ion-card-content>
         </ion-card>
     </ion-row>
